@@ -35,15 +35,12 @@ a {
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -5;
   pointer-events: none;
 }
 
 .bgOverlayCircleContainer .bgOverlayCircle {
-  position: relative;
-  top: -45%;
   background-color: #fff;
   width: 100vw;
   height: 100vh;
@@ -52,6 +49,22 @@ a {
           transform: scale(1.55);
   -webkit-box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
+}
+
+.bgOverlayCircleContainer._top {
+  top: 0;
+}
+
+.bgOverlayCircleContainer._top .bgOverlayCircle {
+  top: -45%;
+}
+
+.bgOverlayCircleContainer._bottom {
+  bottom: 0;
+}
+
+.bgOverlayCircleContainer._bottom .bgOverlayCircle {
+  bottom: -85%;
 }
 
 .secHeading {
@@ -68,7 +81,7 @@ a {
   line-height: 100%;
 }
 
-.secHeading h1 {
+.secHeading > h1 {
   font-size: 50px;
   line-height: 100%;
   font-weight: 700;
@@ -82,16 +95,21 @@ a {
           align-items: center;
 }
 
-.secHeading h1 .liveDot {
+.secHeading > h1 .liveDot {
   width: 22px;
   height: 22px;
   margin-right: 15px;
   display: inline-block;
   border-radius: 50px;
-  border: 2px solid #fff;
+  border: 3px solid #fff;
   background-color: #ff0000;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.secHeading > h1 .light {
+  font-weight: 300;
+  margin-right: 15px;
 }
 
 .secHeading p {
@@ -271,8 +289,8 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
 
 .sliderSection {
   width: 100%;
-  height: 500px;
   margin-top: 2em;
+  padding-bottom: 4em;
 }
 
 .sliderSection .mainSlider__container {
@@ -383,7 +401,7 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
 }
 
 .sliderSection .mainSlider__container .swiper-pagination {
-  bottom: -3em;
+  bottom: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -401,7 +419,7 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   height: 6px;
   position: relative;
   background-color: transparent;
-  background-color: #ccc;
+  background-color: rgba(255, 255, 255, 0.2);
   opacity: 1;
 }
 
@@ -420,7 +438,7 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
 .sliderSection .mainSlider__container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
   width: 100%;
   left: 0;
-  background-color: #145793;
+  background-color: #fff;
 }
 
 .homeAboutSecton {
@@ -646,9 +664,9 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   opacity: .5;
 }
 
@@ -660,6 +678,12 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
 .partnSectorSection .figureNfactContainer .factNfigureSwiper .swiper-slide .factNfigureCard h1 {
   font-size: 70px;
   line-height: 100%;
+  font-weight: 700;
+  color: #145793;
+}
+
+.partnSectorSection .figureNfactContainer .factNfigureSwiper .swiper-slide .factNfigureCard img {
+  max-width: 100%;
 }
 
 .partnSectorSection .figureNfactContainer .factNfigureSwiper .swiper-slide.swiper-slide-active .factNfigureCard {
@@ -667,17 +691,7 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   border: 2px solid #145793;
 }
 
-.webinarSection {
-  width: 100%;
-  height: 1000px;
-  padding: 5em 0;
-}
-
-.webinarSection .webinarSec {
-  width: 100%;
-}
-
-.webinarSection .webinarSec ._header {
+._header {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -685,12 +699,12 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.webinarSection .webinarSec ._header .viewAll {
+._header .viewAll {
   height: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -710,17 +724,25 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   border-radius: 4px;
 }
 
-.webinarSection .webinarSec ._header .viewAll i {
+._header .viewAll i {
   margin-left: 1em;
 }
 
-.webinarSection .webinarSec ._header .viewAll:hover {
+._header .viewAll:hover {
   color: #fff;
   background-color: #145793;
   border-color: #145793;
 }
 
-.webinarSection .webinarSec ._header .sliderNavigation {
+._header .swiper-pagination {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  height: 5;
+  background-color: red;
+}
+
+._header .sliderNavigation {
   background-color: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
@@ -728,9 +750,10 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.webinarSection .webinarSec ._header .sliderNavigation > div {
+._header .sliderNavigation > div {
   position: relative;
   left: inherit;
   right: inherit;
@@ -751,22 +774,296 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   color: black;
 }
 
-.webinarSection .webinarSec ._header .sliderNavigation > div::after {
+._header .sliderNavigation > div::after {
   font-size: 16px;
 }
 
-.webinarSection .webinarSec ._header .sliderNavigation > div:hover {
+._header .sliderNavigation > div:hover {
   background-color: #145793;
   color: #fff;
 }
 
-.webinarSection .webinarSec .liveWebinarSwiper {
+.webinarSection {
   width: 100%;
-  height: 350px;
-  padding: 1em;
+  padding: 5em 0;
 }
 
-.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide {
+.webinarSection .webinarSec {
+  width: 100%;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper, .webinarSection .webinarSec .onDemandWebinarSwiper {
+  width: calc(100% + 2em);
+  height: 365px;
+  padding: 1em;
+  margin-left: -1em;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: black;
+  font-family: "Glory", sans-serif;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .topBlock, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .topBlock {
+  height: 100%;
+  margin-bottom: 15px;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__imgBlock .preRecorded, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__imgBlock .preRecorded {
+  z-index: 1;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  right: 3px;
+  top: 5px;
+  background-color: #333;
+  border-radius: 4px;
+  background-color: #ff0000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__imgBlock img, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__imgBlock img {
+  margin-left: -13px;
+  margin-top: -10px;
+  width: calc(100% + 22px);
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__content h4, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__content h4 {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__content h4:hover, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__content h4:hover {
+  text-decoration: underline;
+  color: #145793;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__content p, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__content p {
+  font-size: 17px;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__profile, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__profile {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 16px;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__profile li, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__profile li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__profile li .__icon, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__profile li .__icon {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: #f1f1f1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__profile li:first-child .__icon, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__profile li:first-child .__icon {
+  border-radius: 4px 4px 0 0;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__profile li:last-child .__icon, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__profile li:last-child .__icon {
+  border-radius: 0 0 4px 4px;
+}
+
+.webinarSection .webinarSec .liveWebinarSwiper .swiper-slide:hover, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide:hover {
+  border: 1px solid #145793;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.eventWebinarSection {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.eventWebinarSection .eventBanner {
+  background-color: #145793;
+  min-width: 400px;
+  width: 400px;
+}
+
+.eventWebinarSection .eventBanner h1 {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  color: #fff;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotate(-90deg) translate(-62%, 420px);
+          transform: rotate(-90deg) translate(-62%, 420px);
+  color: #fff;
+  z-index: 1;
+  margin: 0 0 -30px 0;
+  font-family: "Glory", sans-serif;
+  font-size: 80px;
+  white-space: nowrap;
+  font-weight: 100;
+}
+
+.eventWebinarSection .eventBanner h1 strong {
+  font-weight: 700;
+}
+
+.eventWebinarSection .eventBanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #145793;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/eventBanner.jpg");
+  background-blend-mode: luminosity;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  opacity: .3;
+}
+
+.eventWebinarSection .eventSliderContainer {
+  width: 100%;
+  max-width: calc(100% - 400px);
+  padding: 3em;
+}
+
+.eventWebinarSection .eventSliderContainer .eventWebinarSwiper .eventCard {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5em 1em 1em 1em;
+  font-family: "Glory", sans-serif;
+  color: black;
+  background-image: url("../images/spiral.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 100%;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.eventWebinarSection .eventSliderContainer .eventWebinarSwiper .eventCard h4 {
+  font-weight: 600;
+  text-align: center;
+}
+
+.eventWebinarSection .eventSliderContainer .eventWebinarSwiper .eventCard .evntLogo {
+  width: 100%;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  padding: 5px;
+  background-color: #fff;
+}
+
+.eventWebinarSection .eventSliderContainer .eventWebinarSwiper .eventCard .evntLogo img {
+  max-width: 100%;
+}
+
+.eventWebinarSection .eventSliderContainer .eventWebinarSwiper .eventCard:hover {
+  background-color: #145793;
+  color: #fff;
+}
+
+.sectorsSection, .testimonialSection {
+  width: 100%;
+  background-image: url("../images/pattern.svg");
+  background-attachment: fixed;
+  background-size: 70%;
+  padding: 7em 0 5em 0;
+}
+
+.sectorsSection .sector__container, .testimonialSection .sector__container {
+  width: 960px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 8em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0  auto;
+}
+
+.sectorsSection .sector__card, .testimonialSection .sector__card {
+  width: 240px;
+  height: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -776,8 +1073,536 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: -35px;
+}
+
+.sectorsSection .sector__card:nth-child(5), .testimonialSection .sector__card:nth-child(5) {
+  margin-left: 1px;
+}
+
+.sectorsSection .sector__card .sectorCard__content, .testimonialSection .sector__card .sectorCard__content {
+  padding: 2em;
+  font-family: "Glory", sans-serif;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+
+.sectorsSection .sector__card .sectorCard__content h4, .testimonialSection .sector__card .sectorCard__content h4 {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sectorsSection .sector__card .sectorCard__content .sectorCard__icon, .testimonialSection .sector__card .sectorCard__content .sectorCard__icon {
+  margin-bottom: 1em;
+  width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sectorsSection .sector__card .polygone, .testimonialSection .sector__card .polygone {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sectorsSection .sector__card .polygone svg path, .testimonialSection .sector__card .polygone svg path {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.sectorsSection .sector__card .polygone svg path.bgBase, .testimonialSection .sector__card .polygone svg path.bgBase {
+  fill: rgba(255, 255, 255, 0.35);
+}
+
+.sectorsSection .sector__card .polygone svg path.bgStroke, .testimonialSection .sector__card .polygone svg path.bgStroke {
+  fill: green;
+}
+
+.sectorsSection .sector__card.oncology .polygone svg path.bgStroke, .testimonialSection .sector__card.oncology .polygone svg path.bgStroke {
+  fill: #c73b45;
+}
+
+.sectorsSection .sector__card.oncology .sectorCard__content svg path, .testimonialSection .sector__card.oncology .sectorCard__content svg path {
+  fill: #c73b45;
+}
+
+.sectorsSection .sector__card.oncology:hover .polygone svg path.bgBase, .testimonialSection .sector__card.oncology:hover .polygone svg path.bgBase {
+  fill: #c73b45;
+}
+
+.sectorsSection .sector__card.oncology:hover .sectorCard__content, .testimonialSection .sector__card.oncology:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.oncology:hover .sectorCard__content svg path, .testimonialSection .sector__card.oncology:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.dentistry .polygone svg path.bgStroke, .testimonialSection .sector__card.dentistry .polygone svg path.bgStroke {
+  fill: #5e97aa;
+}
+
+.sectorsSection .sector__card.dentistry .sectorCard__content svg path, .testimonialSection .sector__card.dentistry .sectorCard__content svg path {
+  fill: #5e97aa;
+}
+
+.sectorsSection .sector__card.dentistry:hover .polygone svg path.bgBase, .testimonialSection .sector__card.dentistry:hover .polygone svg path.bgBase {
+  fill: #5e97aa;
+}
+
+.sectorsSection .sector__card.dentistry:hover .sectorCard__content, .testimonialSection .sector__card.dentistry:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.dentistry:hover .sectorCard__content svg path, .testimonialSection .sector__card.dentistry:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.familyMedicine .polygone svg path.bgStroke, .testimonialSection .sector__card.familyMedicine .polygone svg path.bgStroke {
+  fill: #e9b84b;
+}
+
+.sectorsSection .sector__card.familyMedicine .sectorCard__content svg path, .testimonialSection .sector__card.familyMedicine .sectorCard__content svg path {
+  fill: #e9b84b;
+}
+
+.sectorsSection .sector__card.familyMedicine:hover .polygone svg path.bgBase, .testimonialSection .sector__card.familyMedicine:hover .polygone svg path.bgBase {
+  fill: #e9b84b;
+}
+
+.sectorsSection .sector__card.familyMedicine:hover .sectorCard__content, .testimonialSection .sector__card.familyMedicine:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.familyMedicine:hover .sectorCard__content svg path, .testimonialSection .sector__card.familyMedicine:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.dermatology .polygone svg path.bgStroke, .testimonialSection .sector__card.dermatology .polygone svg path.bgStroke {
+  fill: #1cc28f;
+}
+
+.sectorsSection .sector__card.dermatology .sectorCard__content svg path, .testimonialSection .sector__card.dermatology .sectorCard__content svg path {
+  fill: #1cc28f;
+}
+
+.sectorsSection .sector__card.dermatology:hover .polygone svg path.bgBase, .testimonialSection .sector__card.dermatology:hover .polygone svg path.bgBase {
+  fill: #1cc28f;
+}
+
+.sectorsSection .sector__card.dermatology:hover .sectorCard__content, .testimonialSection .sector__card.dermatology:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.dermatology:hover .sectorCard__content svg path, .testimonialSection .sector__card.dermatology:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.humanitarian .polygone svg path.bgStroke, .testimonialSection .sector__card.humanitarian .polygone svg path.bgStroke {
+  fill: #17527a;
+}
+
+.sectorsSection .sector__card.humanitarian .sectorCard__content svg path, .testimonialSection .sector__card.humanitarian .sectorCard__content svg path {
+  fill: #17527a;
+}
+
+.sectorsSection .sector__card.humanitarian:hover .polygone svg path.bgBase, .testimonialSection .sector__card.humanitarian:hover .polygone svg path.bgBase {
+  fill: #17527a;
+}
+
+.sectorsSection .sector__card.humanitarian:hover .sectorCard__content, .testimonialSection .sector__card.humanitarian:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.humanitarian:hover .sectorCard__content svg path, .testimonialSection .sector__card.humanitarian:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.otology .polygone svg path.bgStroke, .testimonialSection .sector__card.otology .polygone svg path.bgStroke {
+  fill: #8bbf43;
+}
+
+.sectorsSection .sector__card.otology .sectorCard__content svg path, .testimonialSection .sector__card.otology .sectorCard__content svg path {
+  fill: #8bbf43;
+}
+
+.sectorsSection .sector__card.otology:hover .polygone svg path.bgBase, .testimonialSection .sector__card.otology:hover .polygone svg path.bgBase {
+  fill: #8bbf43;
+}
+
+.sectorsSection .sector__card.otology:hover .sectorCard__content, .testimonialSection .sector__card.otology:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.otology:hover .sectorCard__content svg path, .testimonialSection .sector__card.otology:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.diagnostics .polygone svg path.bgStroke, .testimonialSection .sector__card.diagnostics .polygone svg path.bgStroke {
+  fill: #854676;
+}
+
+.sectorsSection .sector__card.diagnostics .sectorCard__content svg path, .testimonialSection .sector__card.diagnostics .sectorCard__content svg path {
+  fill: #854676;
+}
+
+.sectorsSection .sector__card.diagnostics:hover .polygone svg path.bgBase, .testimonialSection .sector__card.diagnostics:hover .polygone svg path.bgBase {
+  fill: #854676;
+}
+
+.sectorsSection .sector__card.diagnostics:hover .sectorCard__content, .testimonialSection .sector__card.diagnostics:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.diagnostics:hover .sectorCard__content svg path, .testimonialSection .sector__card.diagnostics:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.healthcare-emergency .polygone svg path.bgStroke, .testimonialSection .sector__card.healthcare-emergency .polygone svg path.bgStroke {
+  fill: #47accf;
+}
+
+.sectorsSection .sector__card.healthcare-emergency .sectorCard__content svg path, .testimonialSection .sector__card.healthcare-emergency .sectorCard__content svg path {
+  fill: #47accf;
+}
+
+.sectorsSection .sector__card.healthcare-emergency:hover .polygone svg path.bgBase, .testimonialSection .sector__card.healthcare-emergency:hover .polygone svg path.bgBase {
+  fill: #47accf;
+}
+
+.sectorsSection .sector__card.healthcare-emergency:hover .sectorCard__content, .testimonialSection .sector__card.healthcare-emergency:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.healthcare-emergency:hover .sectorCard__content svg path, .testimonialSection .sector__card.healthcare-emergency:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.innovation-education .polygone svg path.bgStroke, .testimonialSection .sector__card.innovation-education .polygone svg path.bgStroke {
+  fill: #db2f85;
+}
+
+.sectorsSection .sector__card.innovation-education .sectorCard__content svg path, .testimonialSection .sector__card.innovation-education .sectorCard__content svg path {
+  fill: #db2f85;
+}
+
+.sectorsSection .sector__card.innovation-education:hover .polygone svg path.bgBase, .testimonialSection .sector__card.innovation-education:hover .polygone svg path.bgBase {
+  fill: #db2f85;
+}
+
+.sectorsSection .sector__card.innovation-education:hover .sectorCard__content, .testimonialSection .sector__card.innovation-education:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.innovation-education:hover .sectorCard__content svg path, .testimonialSection .sector__card.innovation-education:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.pharmaceutical .polygone svg path.bgStroke, .testimonialSection .sector__card.pharmaceutical .polygone svg path.bgStroke {
+  fill: #7169e7;
+}
+
+.sectorsSection .sector__card.pharmaceutical .sectorCard__content svg path, .testimonialSection .sector__card.pharmaceutical .sectorCard__content svg path {
+  fill: #7169e7;
+}
+
+.sectorsSection .sector__card.pharmaceutical:hover .polygone svg path.bgBase, .testimonialSection .sector__card.pharmaceutical:hover .polygone svg path.bgBase {
+  fill: #7169e7;
+}
+
+.sectorsSection .sector__card.pharmaceutical:hover .sectorCard__content, .testimonialSection .sector__card.pharmaceutical:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.pharmaceutical:hover .sectorCard__content svg path, .testimonialSection .sector__card.pharmaceutical:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.sectorsSection .sector__card.nutrition .polygone svg path.bgStroke, .testimonialSection .sector__card.nutrition .polygone svg path.bgStroke {
+  fill: #0b8123;
+}
+
+.sectorsSection .sector__card.nutrition .sectorCard__content svg path, .testimonialSection .sector__card.nutrition .sectorCard__content svg path {
+  fill: #0b8123;
+}
+
+.sectorsSection .sector__card.nutrition:hover .polygone svg path.bgBase, .testimonialSection .sector__card.nutrition:hover .polygone svg path.bgBase {
+  fill: #0b8123;
+}
+
+.sectorsSection .sector__card.nutrition:hover .sectorCard__content, .testimonialSection .sector__card.nutrition:hover .sectorCard__content {
+  color: white;
+}
+
+.sectorsSection .sector__card.nutrition:hover .sectorCard__content svg path, .testimonialSection .sector__card.nutrition:hover .sectorCard__content svg path {
+  fill: #fff;
+}
+
+.testimonialSection {
+  width: 100%;
+  padding-top: 4em;
+  border-top: 1px solid #ddd;
+}
+
+.testimonialSection .testimonialSlider {
+  width: 100%;
+  max-width: 775px;
+  margin: 0 auto;
+}
+
+.testimonialSection .testimonialSliderSub {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.testimonialSection .testimonialSliderSub::before, .testimonialSection .testimonialSliderSub::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e6e6e6;
   background-color: #fff;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
+  opacity: .8;
+  border-radius: 10px;
+}
+
+.testimonialSection .testimonialSliderSub::before {
+  width: calc(100% + 25px);
+  height: 92%;
+  z-index: 1;
+}
+
+.testimonialSection .testimonialSliderSub::after {
+  width: calc(100% + 50px);
+  height: 82%;
+  z-index: 0;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper {
+  width: 100%;
+  height: 380px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #145793;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__image {
+  width: 100%;
+  max-width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__image img {
+  width: 100%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__image::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 181px;
+  background-image: url("../images/qouteIcon.svg");
+  background-repeat: no-repeat;
+  top: -10px;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__content {
+  width: 100%;
+  max-width: 75%;
+  font-family: "Glory", sans-serif;
+  font-weight: 500;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__content .__text {
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__content .__nameTitle {
+  padding-left: 20px;
+  width: 100%;
+  -webkit-box-shadow: inset 5px 0 0 #145793;
+          box-shadow: inset 5px 0 0 #145793;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__content .__nameTitle h5 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__content .__nameTitle p {
+  font-size: 16px;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .swiper-pagination {
+  bottom: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 775px;
+  padding: 0 10%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .swiper-pagination .swiper-pagination-bullet {
+  margin: 0;
+  width: 100%;
+  border-radius: 0;
+  height: 3px;
+  position: relative;
+  background-color: transparent;
+  background-color: rgba(20, 87, 147, 0.1);
+  -webkit-transition: height 0.3s ease-in;
+  transition: height 0.3s ease-in;
+  opacity: 1;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .swiper-pagination .swiper-pagination-bullet:hover {
+  height: 10px;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .swiper-pagination .swiper-pagination-bullet::after {
+  content: '';
+  width: 0;
+  height: 100%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+  width: 100%;
+  left: 0;
+  background-color: #145793;
+}
+
+.testimonialSection .testimonialSliderSub .testimonialSwiper .sliderNavigation {
+  position: absolute;
+}
+
+.footer {
+  width: 100%;
+  padding: 2em 0;
+  background-color: #fff;
+}
+
+.footer .copyrightBlock {
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px 0 20px;
+  border: 1px solid #e6e6e6;
+}
+
+.footer .copyrightBlock .footerSocialMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer .copyrightBlock .footerSocialMedia li a {
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  color: black;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.footer .copyrightBlock .footerSocialMedia li a:hover {
+  background-color: #145793;
+  color: #fff;
 }
