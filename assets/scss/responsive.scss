@@ -1,3 +1,516 @@
+$glory: 'Glory', sans-serif;
+$roboto: 'Roboto', sans-serif;  
+$transition: all 0.3s ease-in;
+$navyBlue: #145793;
+
 @media (max-width: 1500px) and (min-width: 1400px) {
-    
+    .partnSectorSection {
+        padding: 1.5em;
+        .partnSectorSctnSub {
+            padding: 3em;
+            .participentCards {
+                $cardWidth: 182px;
+                $cardGap: 3px;
+                &::after {
+                    top: 10%;
+                    right: 5%;
+                    height: 80%;
+                }
+                .__card {
+                    width: $cardWidth;
+                    height: $cardWidth;
+                    &.familyMedicine,
+                    &.collaboration-with {  width: ($cardWidth * 2) + ($cardGap * 2); }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .partnSectorSection {
+        padding: 1.5em;
+        .partnSectorSctnSub {
+            padding: 3em;
+            .participentCards {
+                $cardWidth: 180px;
+                $cardGap: 3px;
+                &::after {
+                    top: 0;
+                    right: 15%;
+                    height: 100%;
+                }
+                .__card {
+                    width: $cardWidth;
+                    height: $cardWidth;
+                        // height: ($cardWidth * 2) + ($cardGap * 2);
+                    &.__card.oncology,
+                    &.dentistry {width: ($cardWidth / 2 * 3) + ($cardGap * 1);}
+                    &.familyMedicine { width: ($cardWidth * 2) + ($cardGap * 2); }
+                    // &.collaboration-with {  }
+                    &.collaboration-with {
+                        // order: -1;
+                        .__icon { img {max-width: 200px;} }
+                    }
+                }
+            }
+            .figureNfactBlock {
+                margin-left: -80px;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {width: 100%; max-width: 100%;}
+    header .topLogo img {width: 100%;}
+    header .topNavigation,
+    .footer .copyrightBlock {max-width: 990px; margin: auto;}
+    .sliderSection {
+        .mainSlider__container {
+            max-width: 990px;
+            margin: auto;
+            .swiper-pagination {
+                max-width: 900px;
+                left: calc(50% - 450px);
+            }
+        }
+    }
+    .partnSectorSection {
+        padding: 1.5em;
+        .partnSectorSctnSub {
+            padding: 3em 1em;
+            .participentsBlock {
+                margin-bottom: 5em;
+                .secHeading {
+                    text-align: center;
+                    h1 {justify-content: center;}
+                }
+            }
+            .participentCards {
+                margin: auto;
+                max-width: 940px;
+                $cardWidth: 182px;
+                $cardGap: 3px;
+                &::after {display: none;}
+                .__card {
+                    width: $cardWidth;
+                    height: $cardWidth;
+                    &.familyMedicine {  width: ($cardWidth * 2) + ($cardGap * 2); }
+                }
+            }
+        }
+    }
+    .webinarSection { 
+        padding: 3em .8em; 
+        .webinarSec {
+            .liveWebinarSwiper, .onDemandWebinarSwiper {
+                .swiper-slide a .webinarCard__content h4 {font-size: 18px;}                
+            }
+        }
+    }
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+    .container {width: 100%; max-width: 100%;}
+    .eventWebinarSection {
+        flex-direction: column;
+        .eventBanner {
+            width: 100%;
+            height: auto;
+            padding: 2.5em .5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h1 {
+                position: relative;
+                bottom: inherit;
+                right: inherit;
+                transform-origin: inherit;
+                transform: inherit;
+                margin: 0;
+                font-size: 56px;
+            }
+        }
+        .eventSliderContainer {
+            max-width: 100%;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    header {
+        .topLogo img {width: 100%;}
+        .topStrip .__content {padding: 0;}
+    }
+    .partnSectorSection {
+        padding: 1em;
+        .partnSectorSctnSub {
+            padding: 3em 1em;
+            .participentsBlock {
+                margin-bottom: 3.5em;
+                .secHeading {
+                    text-align: center;
+                    h1 {justify-content: center;}
+                }
+            }
+            .participentCards {
+                margin: auto;
+                max-width: 940px;
+                $cardWidth: 172px;
+                $cardGap: 3px;
+                &::after {display: none;}
+                .__card {
+                    width: $cardWidth;
+                    height: $cardWidth;
+                    &.familyMedicine, &.collaboration-with {  width: ($cardWidth * 2) + ($cardGap * 2); }
+                    .__icon {width: 60px;height: 60px;min-width: 60px;}
+                    h2 {font-size: 26px;}
+                }
+            }
+        }
+    }
+    .webinarSection { 
+        padding: 3em .8em; 
+        .webinarSec {
+            .liveWebinarSwiper, .onDemandWebinarSwiper {
+                .swiper-slide a .webinarCard__content h4 {font-size: 18px;}                
+            }
+        }
+    }
+    .secHeading {
+        h3 {font-size: 20px;}
+        > h1 {font-size: 36px;}
+    }
+    .eventWebinarSection .eventSliderContainer {padding: 2em;}
+    .webinarSection .webinarSec .liveWebinarSwiper, 
+    .webinarSection .webinarSec .onDemandWebinarSwiper {height: auto;}
+    .sectorsSection, .testimonialSection {
+        padding: 4em 0 5em;
+        .sector {
+            $hexagoneSize: 240px;
+            &__container { width: $hexagoneSize * 3; }
+            &__card {
+                width: $hexagoneSize;
+                height: $hexagoneSize;
+                margin-top: - 35px;
+                &:nth-child(5) { margin-left: 0; }
+                &:nth-child(4), &:nth-child(9) { margin-left: 1px; }
+                .sectorCard__content {
+                    padding: 2em;
+                    h4 {font-size: 1.2em; font-weight: 700; text-transform: uppercase;}
+                    .sectorCard__icon { width: 60px; height: 60px; margin-bottom: 1em;}
+                }
+            }
+        }
+    }
+    .testimonialSection {
+        .testimonialSliderSub {
+            padding: 0 1em;
+            &::before {
+                width: calc(100% - 50px);
+                height: 92%;
+                z-index: 1;
+                top: 12%;
+            }
+            &::after {
+                width: calc(100% - 100px);
+                height: 82%;
+                z-index: 0;
+                top: 26%;
+            }
+        }
+    }
+
+
+}
+@media (min-width: 320px) and (max-width: 768px) {
+    header {
+        .topLogo img {width: 100%;}
+        nav.topNavigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.85);
+            padding: 15vw;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            display: none;
+            overflow-y: scroll;
+
+            .closeMenuPopup {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 3vw;
+                right: 3vw;
+                color: #fff;
+                font-size: 6vw;
+                transition: $transition;
+                z-index: 1;
+                &:hover {background-color: #fff; color: red;}
+            }
+
+            .menu {
+                flex-direction: column;
+                background-color: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                border: 0;
+                width: 100%;
+
+                &:hover { border-color: none; background-color: transparent; box-shadow: none; }
+                > .menu-item {
+                    > a {
+                        color: white;
+                        padding-left: 1em;
+                        font-size: 2.5vw;
+                        justify-content: flex-start;
+                        border-bottom: 1px solid rgba(#fff, 0.08);
+                    }
+                    &.menu-dropdown {
+                        &::after {
+                            content: "\f078";
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            position: absolute;
+                            top: (15px / 2);
+                            right: 0;
+                            width: 35px;
+                            height: 35px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: white;
+                        }
+                    }
+                    .sub-menu {
+                        width: 100%;
+                        left: 0;
+                        position: relative;
+                        border-radius: 0;
+                        .sub-menu li a {font-size: 14px;}
+                    }
+                }
+
+                
+            }
+        }
+        .mobileNavigation {
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(#000000, 0.03);
+            border-radius: 6px;
+            background-color: #F9F9F9;
+            border: 1px solid rgba($navyBlue, 0.2);
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 .5em;
+            .hamburgerMenu {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                color: $navyBlue;
+            }
+        }
+    }
+    .sliderSection {
+        .mainSlider__container {
+            .mainTopSlider {
+                width: calc(100vw - 20px);
+                height: 300px;
+                .swiper-slide {
+                    .__content {
+                        h1 {font-size: 32px;}
+                        p {font-size: 14px;}
+                    }
+                }
+            }
+            .swiper-pagination {
+                width: 90vw;
+                max-width: 90vw;
+                left: calc(50% - 45vw);
+            }
+        }
+    }    
+    .bgOverlayCircleContainer {
+        .bgOverlayCircle { height: 90vh; }
+    }
+    .homeAboutSecton { 
+        padding: 1em 0 2em;    
+        .homeAboutSubSec {padding: 0 0 0 2%;}
+    }
+    .bgOverlayCircleContainer._top {top: -10vw;}
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    body { overflow-x: hidden;}
+    .bgOverlayCircleContainer._top {top: 30vw;}
+    .homeAboutSecton {
+        .homeAboutSubSec .aboutImg {margin-top: 3em;}
+    }
+    .secHeading {
+        > h1 {font-size: 32px;}
+        > h3 {font-size: 22px;}
+        > P {font-size: 14px;}
+    }
+    .partnSectorSection {
+        padding: .5em;
+        .partnSectorSctnSub {
+            padding: 2em 0.5em;
+            .participentsBlock {
+                margin-bottom: 2.5em;
+                .secHeading {
+                    text-align: center;
+                    h1 {justify-content: center;}
+                }
+            }
+            .participentCards {
+                width: 100vw;
+                margin-left: -1em;
+                padding: 0 1em;
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+                max-width: initial;
+                $cardWidth: 200px;
+                $cardGap: 5px;
+                &::after {display: none;}
+                .__card {
+                    width: $cardWidth;
+                    min-width: $cardWidth;
+                    height: $cardWidth + 50;
+                    &.familyMedicine {  
+                        width: $cardWidth;
+                        flex-direction: column; 
+                        justify-content: space-between;
+                        .__icon {margin-bottom: 1em;}
+                        div {
+                            text-align: center;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+            .figureNfactContainer {
+                position: relative;
+                width: 100%;
+                padding-top: 50px;
+        
+                .factNfigureSwiper {
+                    $cardWidth: 255px;
+                    width: $cardWidth;
+                    height: ($cardWidth / 2) * 3;
+                    .swiper-slide {
+                        .swiper-slide-shadow {background-color: transparent;}
+                        .factNfigureCard {
+                            width: $cardWidth;
+                            height: ($cardWidth / 2) * 3;
+                            img {max-width: 80%;}
+                            h3 { font-size: 26px;}
+                            h1 {font-size: 56px; }
+                        }
+                        &.swiper-slide-active {
+                            .factNfigureCard {
+                                opacity: 1;
+                                border: 2px solid $navyBlue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .webinarSection { 
+        padding: 3em .8em 1em; 
+        .container {padding: 0;}
+        .webinarSec {
+            .liveWebinarSwiper, .onDemandWebinarSwiper {
+                height: auto;
+                .swiper-slide a .webinarCard__content h4 {font-size: 18px;}                
+            }
+        }
+    }
+    ._header {
+        flex-direction: column;
+        .viewAllContainer {
+            justify-content: space-between; 
+            margin-top: 1em;
+            width: 100%;
+            .viewAll {font-size: 14px;}
+        }
+    }
+    .eventWebinarSection {
+        .eventBanner {
+            min-width: initial;
+            h1 {font-size: 32px;}
+        }
+        .eventSliderContainer {
+            padding: 1em;
+        }
+    }
+    .sectorsSection, .testimonialSection {
+        padding: 3.5em 0;
+        .sector {
+            $hexagoneSize: 240px;
+            &__container { 
+                margin-top: 2em;
+                padding: 1em;
+                overflow-x: scroll;
+                width: 100vw;
+                margin-left: -1em;     
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            &__card {
+                width: $hexagoneSize;
+                min-width: $hexagoneSize;
+                height: $hexagoneSize;
+                margin-top: 0;
+                &:nth-child(5) { margin-left: 0; }
+                .sectorCard__content {
+                    padding: 2em;
+                    h4 {font-size: 1.2em; font-weight: 700; text-transform: uppercase;}
+                    .sectorCard__icon { width: 60px; height: 60px; margin-bottom: 1em;}
+                }
+            }
+        }
+    }
+    .testimonialSection {
+        .testimonialSliderSub {
+            padding: 0 1em;
+            &::before {
+                width: calc(100% - 50px);
+                height: 92%;
+                z-index: 1;
+                top: 10%;
+            }
+            &::after {
+                width: calc(100% - 100px);
+                height: 82%;
+                z-index: 0;
+                top: 22%;
+            }
+            .testimonialSwiper {
+                height: auto;
+                .testimonialCard {
+                    flex-direction: column;
+                    justify-content: center;
+                    .__image {
+                        max-width: 100%;
+                        margin-bottom: 8em;
+                    }
+                    .__content {
+                        max-width: 100%;
+                        .__text {font-size: 14px; line-height: 20px;}
+                    }
+                }
+                .swiper-pagination {display: none !important;}
+            }
+        }
+    }
 }

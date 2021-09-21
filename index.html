@@ -16,6 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/scss/responsive.css">
     <title>Welcome to Waterfalls Education</title>
 </head>
 <body>
@@ -34,13 +35,16 @@
             <div class="topLogo">
                 <img src="assets/images/waterfallHeader.png" alt="">
             </div>
-
+            <div class="mobileNavigation d-xl-none d-lg-none">
+                <div class="hamburgerMenu"><i class="fas fa-bars"></i></div>
+            </div>
             <nav class="topNavigation">
+                <div class="closeMenuPopup d-xl-none d-lg-none">&times;</div>
                 <ul class="menu">
                     <li class="menu-item"><a href="javascript:;">Home</a></li>
                     <li class="menu-item"><a href="javascript:;">About</a></li>
                     <li class="menu-item"><a href="javascript:;">Webinars</a></li>
-                    <li class="menu-item">
+                    <li class="menu-item menu-dropdown">
                         <a href="javascript:;">Sectors</a>
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="javascript:;">Dentistry</a></li>
@@ -58,7 +62,7 @@
                     </li>
                     <li class="menu-item"><a href="javascript:;">Committee and Speakers</a></li>
                     <li class="menu-item"><a href="javascript:;">How it works</a></li>
-                    <li class="menu-item">
+                    <li class="menu-item menu-dropdown">
                         <a href="javascript:;">Media</a>
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="javascript:;">Paper Clips</a></li>
@@ -116,7 +120,7 @@
         <div class="container">
             <div class="homeAboutSubSec">
                 <div class="row align-items-center">
-                    <div class="col-5">
+                    <div class="col-12 col-md-5">
                         <div class="secHeading">
                             <h3>About</h3>
                             <h1>Waterfalls</h1>
@@ -124,7 +128,7 @@
                             <a href="javascript:;" class="btn know-more">Know More</a>
                         </div>
                     </div>
-                    <div class="col-7">
+                    <div class="col-12 col-md-7">
                         <div class="aboutImg">
                             <img src="assets/images/desktopIllustration.svg" alt="">
                         </div>
@@ -137,7 +141,7 @@
     <section class="partnSectorSection">
         <div class="partnSectorSctnSub">
             <div class="row">
-                <div class="col-md-6 col-lg-7 col-xl-8">
+                <div class="col-lg-12 col-xl-8">
                     <div class="participentsBlock">
                         <div class="secHeading">
                             <h3>Number of</h3>
@@ -252,65 +256,67 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-5 col-xl-4">
-                    <div class="secHeading text-center">
-                        <h3>Number of</h3>
-                        <h1 class="mb-1 justify-content-center">Facts & Figures</h1>
-
-                        <div class="figureNfactContainer">
-                            <div class="swiper factNfigureSwiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="factNfigureCard">
-                                            <div class="__icon mb-4">
-                                                <img src="assets/images/speaker-icon.svg" alt="">
-                                            </div>
-                                            <h3 class="mb-3">Speakers</h3>
-                                            <h1>335</h1>
-                                            <div class="dummyGraph">
-                                                <img src="assets/images/dymy-graph.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="factNfigureCard">
-                                            <div class="__icon mb-4">
-                                                <img src="assets/images/sectors.svg" alt="">
-                                            </div>
-                                            <h3 class="mb-3">Sectors</h3>
-                                            <h1>15</h1>
-                                            <div class="dummyGraph">
-                                                <img src="assets/images/dymy-graph.svg" alt="">
+                <div class="col-lg-12 col-xl-4">
+                    <div class="figureNfactBlock">
+                        <div class="secHeading text-center">
+                            <h3>Number of</h3>
+                            <h1 class="mb-1 justify-content-center">Facts & Figures</h1>
+    
+                            <div class="figureNfactContainer">
+                                <div class="swiper factNfigureSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="factNfigureCard">
+                                                <div class="__icon mb-4">
+                                                    <img src="assets/images/speaker-icon.svg" alt="">
+                                                </div>
+                                                <h3 class="mb-3">Speakers</h3>
+                                                <h1>335</h1>
+                                                <div class="dummyGraph">
+                                                    <img src="assets/images/dymy-graph.svg" alt="">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="factNfigureCard">
-                                            <div class="__icon mb-4">
-                                                <img src="assets/images/webinars.svg" alt="">
-                                            </div>
-                                            <h3 class="mb-3">Webinars</h3>
-                                            <h1>433</h1>
-                                            <div class="dummyGraph">
-                                                <img src="assets/images/dymy-graph.svg" alt="">
+                                        <div class="swiper-slide">
+                                            <div class="factNfigureCard">
+                                                <div class="__icon mb-4">
+                                                    <img src="assets/images/sectors.svg" alt="">
+                                                </div>
+                                                <h3 class="mb-3">Sectors</h3>
+                                                <h1>15</h1>
+                                                <div class="dummyGraph">
+                                                    <img src="assets/images/dymy-graph.svg" alt="">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="factNfigureCard">
-                                            <div class="__icon mb-4">
-                                                <img src="assets/images/academic.svg" alt="">
+                                        <div class="swiper-slide">
+                                            <div class="factNfigureCard">
+                                                <div class="__icon mb-4">
+                                                    <img src="assets/images/webinars.svg" alt="">
+                                                </div>
+                                                <h3 class="mb-3">Webinars</h3>
+                                                <h1>433</h1>
+                                                <div class="dummyGraph">
+                                                    <img src="assets/images/dymy-graph.svg" alt="">
+                                                </div>
                                             </div>
-                                            <h3 class="mb-3">Academic and Scientific Institutes</h3>
-                                            <h1>82</h1>
-                                            <div class="dummyGraph">
-                                                <img src="assets/images/dymy-graph.svg" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="factNfigureCard">
+                                                <div class="__icon mb-4">
+                                                    <img src="assets/images/academic.svg" alt="">
+                                                </div>
+                                                <h3 class="mb-3">Academic and Scientific Institutes</h3>
+                                                <h1>82</h1>
+                                                <div class="dummyGraph">
+                                                    <img src="assets/images/dymy-graph.svg" alt="">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="swiper-pagination"></div>
                             </div>
-                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -695,8 +701,8 @@
                 <div class="swiper eventWebinarSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="row gy-2 gx-2">
-                                <div class="col-xl-4 col-lg-6">
+                            <div class="row gy-3 gx-3">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>Anti-Smoking International Alliance Webinars</h4>
                                         <div class="evntLogo">
@@ -704,7 +710,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -712,7 +718,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -720,7 +726,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -728,7 +734,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -736,7 +742,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -744,7 +750,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -752,7 +758,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -760,7 +766,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -771,8 +777,8 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="row gy-2 gx-2">
-                                <div class="col-xl-4 col-lg-6">
+                            <div class="row gy-3 gx-3">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -780,7 +786,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -788,7 +794,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -796,7 +802,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -804,7 +810,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -812,7 +818,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -820,7 +826,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -828,7 +834,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -836,7 +842,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
                                     <a href="javascript:;" class="eventCard">
                                         <h4>AEEDC Webinars</h4>
                                         <div class="evntLogo">
@@ -1271,16 +1277,47 @@
                 nextEl: "#liveWebinar-swiper-button-next",
                 prevEl: "#liveWebinar-swiper-button-prev",
             },
+            breakpoints: {
+                375: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 3,
+                    autoHeight: true,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+                1025: {
+                    slidesPerView: 4,
+                },
+            },
         });
-        var liveWebinarSwiper = new Swiper(".onDemandWebinarSwiper", {
+        var onDemandWebinarSwiper = new Swiper(".onDemandWebinarSwiper", {
             autoplay: { delay: 4000, },
             slidesPerView: 4,
             spaceBetween: 20,
             centeredSlides: false,
+            // autoHeight: true,
             loop: true,
             navigation: {
                 nextEl: "#onDemandWebinar-swiper-button-next",
                 prevEl: "#onDemandWebinar-swiper-button-prev",
+            },
+            breakpoints: {
+                375: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 3,
+                    autoHeight: true,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+                1025: {
+                    slidesPerView: 4,
+                },
             },
         });
         var eventWebinarSwiper = new Swiper(".eventWebinarSwiper", {
@@ -1302,7 +1339,19 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            breakpoints: {
+                375: {
+                    autoHeight: true,
+                },
+            },
         });
+
+        // Responsive Menu popup
+        const hamburgerMenuBtn = document.querySelector(".hamburgerMenu");
+        const popupMenu = document.querySelector(".topNavigation");
+        const closePopupMenuBtn = document.querySelector(".closeMenuPopup");
+        hamburgerMenuBtn.addEventListener("click", () => popupMenu.style.display = "flex");
+        closePopupMenuBtn.addEventListener("click", () => popupMenu.style.display = "none");
     </script>
 </body>
 </html>
