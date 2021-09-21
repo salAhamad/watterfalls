@@ -351,6 +351,10 @@ $navyBlue: #145793;
 @media (min-width: 320px) and (max-width: 767px) {
     body { overflow-x: hidden;}
     .bgOverlayCircleContainer._top {top: 30vw;}
+    header nav.topNavigation {
+        padding: 10vw;
+        .menu > .menu-item > a {font-size: 16px;}
+    }
     .homeAboutSecton {
         .homeAboutSubSec .aboutImg {margin-top: 3em;}
     }

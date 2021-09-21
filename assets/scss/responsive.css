@@ -433,6 +433,12 @@
   .bgOverlayCircleContainer._top {
     top: 30vw;
   }
+  header nav.topNavigation {
+    padding: 10vw;
+  }
+  header nav.topNavigation .menu > .menu-item > a {
+    font-size: 16px;
+  }
   .homeAboutSecton .homeAboutSubSec .aboutImg {
     margin-top: 3em;
   }
