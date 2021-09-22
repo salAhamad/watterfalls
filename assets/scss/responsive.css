@@ -434,7 +434,7 @@
     top: 30vw;
   }
   header nav.topNavigation {
-    padding: 10vw;
+    padding: 5em 2em;
   }
   header nav.topNavigation .menu > .menu-item > a {
     font-size: 16px;
@@ -496,7 +496,7 @@
             justify-content: space-between;
   }
   .partnSectorSection .partnSectorSctnSub .participentCards .__card.familyMedicine .__icon {
-    margin-bottom: 1em;
+    margin: 1.5em 1em;
   }
   .partnSectorSection .partnSectorSctnSub .participentCards .__card.familyMedicine div {
     text-align: center;
@@ -506,6 +506,7 @@
     position: relative;
     width: 100%;
     padding-top: 50px;
+    overflow: hidden;
   }
   .partnSectorSection .partnSectorSctnSub .figureNfactContainer .factNfigureSwiper {
     width: 255px;
@@ -539,6 +540,7 @@
   }
   .webinarSection .webinarSec .liveWebinarSwiper, .webinarSection .webinarSec .onDemandWebinarSwiper {
     height: auto;
+    width: 100vw;
   }
   .webinarSection .webinarSec .liveWebinarSwiper .swiper-slide a .webinarCard__content h4, .webinarSection .webinarSec .onDemandWebinarSwiper .swiper-slide a .webinarCard__content h4 {
     font-size: 18px;

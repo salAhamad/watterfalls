@@ -352,7 +352,7 @@ $navyBlue: #145793;
     body { overflow-x: hidden;}
     .bgOverlayCircleContainer._top {top: 30vw;}
     header nav.topNavigation {
-        padding: 10vw;
+        padding: 5em 2em;
         .menu > .menu-item > a {font-size: 16px;}
     }
     .homeAboutSecton {
@@ -392,7 +392,7 @@ $navyBlue: #145793;
                         width: $cardWidth;
                         flex-direction: column; 
                         justify-content: space-between;
-                        .__icon {margin-bottom: 1em;}
+                        .__icon {margin: 1.5em 1em;}
                         div {
                             text-align: center;
                             padding: 0;
@@ -404,6 +404,7 @@ $navyBlue: #145793;
                 position: relative;
                 width: 100%;
                 padding-top: 50px;
+                overflow: hidden;
         
                 .factNfigureSwiper {
                     $cardWidth: 255px;
@@ -435,6 +436,7 @@ $navyBlue: #145793;
         .webinarSec {
             .liveWebinarSwiper, .onDemandWebinarSwiper {
                 height: auto;
+                width: 100vw;
                 .swiper-slide a .webinarCard__content h4 {font-size: 18px;}                
             }
         }
