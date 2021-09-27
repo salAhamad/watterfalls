@@ -741,12 +741,62 @@ header {
         }
         &__card {
             width: $hexagoneSize;
-            height: $hexagoneSize;
+            height: $hexagoneSize + 15px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: - 35px;
+            transition: all 0.1s ease-in;
             &:nth-child(5) { margin-left: 1px; }
+            &.sector__card_2 {
+                background-image: url('../images/Polygon.svg');
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            &.oncology {
+                background-image: url('../images/polygon_oncology.svg');
+                &:hover {background-image: url('../images/polygon_oncology_full.svg');}
+            }
+            &.dentistry {
+                background-image: url('../images/polygon_dentistry.svg');
+                &:hover {background-image: url('../images/polygon_dentistry_full.svg');}
+            }
+            &.familyMedicine {
+                background-image: url('../images/polygon_familyMedicine.svg');
+                &:hover {background-image: url('../images/polygon_familyMedicine_full.svg');}
+            }
+            &.dermatology {
+                background-image: url('../images/polygon_dermatology.svg');
+                &:hover {background-image: url('../images/polygon_dermatology_full.svg');}
+            }
+            &.humanitarian {
+                background-image: url('../images/polygon_humanitarian.svg');
+                &:hover {background-image: url('../images/polygon_humanitarian_full.svg');}
+            }
+            &.otology {
+                background-image: url('../images/polygon_otology.svg');
+                &:hover {background-image: url('../images/polygon_otology_full.svg');}
+            }
+            &.diagnostics {
+                background-image: url('../images/polygon_diagnostics.svg');
+                &:hover {background-image: url('../images/polygon_diagnostics_full.svg');}
+            }
+            &.healthcare-emergency {
+                background-image: url('../images/polygon_healthcare-emergency.svg');
+                &:hover {background-image: url('../images/polygon_healthcare-emergency_full.svg');}
+            }
+            &.innovation-education {
+                background-image: url('../images/polygon_innovation-education.svg');
+                &:hover {background-image: url('../images/polygon_innovation-education_full.svg');}
+            }
+            &.pharmaceutical {
+                background-image: url('../images/polygon_pharmaceutical.svg');
+                &:hover {background-image: url('../images/polygon_pharmaceutical_full.svg');}
+            }
+            &.nutrition {
+                background-image: url('../images/polygon_nutrition.svg');
+                &:hover {background-image: url('../images/polygon_nutrition_full.svg');}
+            }
 
             .sectorCard__content {
                 padding: 2em;
@@ -775,11 +825,29 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                display: none;
                 svg {
                     path {
                         transition: $transition;
                         &.bgBase {fill: rgba(#fff, 0.35); }
                         &.bgStroke {fill: green; }
+                    }
+                }
+            }
+            .sectorCard__icon {
+                width: 75px;
+                height: 75px;
+                img {
+                    max-height: 100%;
+                    width: 100%;
+                    &[data-set="hover"] {display: none;}
+                }
+            }
+            &:hover {
+                .sectorCard__icon {
+                    img {
+                        &[data-set="active"] {display: none;}
+                        &[data-set="hover"] {display: block;}
                     }
                 }
             }
@@ -924,7 +992,7 @@ header {
             //     &::before { transform: rotateZ(60.2deg); }
             //     &::after { transform: rotateZ(-60.2deg); }
             // }
-        }
+        }        
     }
 }
 

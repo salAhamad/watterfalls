@@ -190,7 +190,7 @@ $navyBlue: #145793;
             &__container { width: $hexagoneSize * 3; }
             &__card {
                 width: $hexagoneSize;
-                height: $hexagoneSize;
+                height: $hexagoneSize + 15;
                 margin-top: - 35px;
                 &:nth-child(5) { margin-left: 0; }
                 &:nth-child(4), &:nth-child(9) { margin-left: 1px; }
@@ -238,6 +238,7 @@ $navyBlue: #145793;
             align-items: flex-start;
             display: none;
             overflow-y: scroll;
+            backdrop-filter: blur(2px);
 
             .closeMenuPopup {
                 width: 50px;
@@ -272,21 +273,40 @@ $navyBlue: #145793;
                         justify-content: flex-start;
                         border-bottom: 1px solid rgba(#fff, 0.08);
                     }
+                    $subMenuHeight: 36px;
                     &.menu-dropdown {
-                        &::after {
-                            content: "\f078";
-                            font-family: "Font Awesome 5 Free";
-                            font-weight: 900;
-                            position: absolute;
-                            top: (15px / 2);
-                            right: 0;
+                        > a {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 0 1rem;
+                        }
+                        // &::after {
+                        //     content: "\f078";
+                        //     font-family: "Font Awesome 5 Free";
+                        //     font-weight: 900;
+                        //     position: absolute;
+                        //     top: (15px / 2);
+                        //     right: 0;
+                        //     width: 35px;
+                        //     height: 35px;
+                        //     display: flex;
+                        //     justify-content: center;
+                        //     align-items: center;
+                        //     color: white;
+                        // }
+                        .downArrowIcon {
+                            position: relative;
                             width: 35px;
                             height: 35px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             color: white;
+                            right: -1rem;
                         }
+                        &:hover .sub-menu li {height: 0; }
+                        &.active .sub-menu li {height: $subMenuHeight;}
                     }
                     .sub-menu {
                         width: 100%;
@@ -356,7 +376,13 @@ $navyBlue: #145793;
         .menu > .menu-item > a {font-size: 16px;}
     }
     .homeAboutSecton {
-        .homeAboutSubSec .aboutImg {margin-top: 3em;}
+        .homeAboutSubSec {
+            .secHeading {
+                text-align: center;
+                h1 {justify-content: center;}
+            }
+            .aboutImg {margin-top: 3em;}
+        }
     }
     .secHeading {
         > h1 {font-size: 32px;}
@@ -475,7 +501,7 @@ $navyBlue: #145793;
             &__card {
                 width: $hexagoneSize;
                 min-width: $hexagoneSize;
-                height: $hexagoneSize;
+                height: $hexagoneSize + 15;
                 margin-top: 0;
                 &:nth-child(5) { margin-left: 0; }
                 .sectorCard__content {
@@ -488,7 +514,7 @@ $navyBlue: #145793;
     }
     .testimonialSection {
         .testimonialSliderSub {
-            padding: 0 1em;
+            padding: 0 0;
             &::before {
                 width: calc(100% - 50px);
                 height: 92%;
@@ -503,16 +529,18 @@ $navyBlue: #145793;
             }
             .testimonialSwiper {
                 height: auto;
+                min-height: 360px;
                 .testimonialCard {
                     flex-direction: column;
                     justify-content: center;
                     .__image {
                         max-width: 100%;
-                        margin-bottom: 8em;
+                        margin-bottom: 1.3em;
+                        &::after {display: none;}
                     }
                     .__content {
                         max-width: 100%;
-                        .__text {font-size: 14px; line-height: 20px;}
+                        .__text {font-size: 16px; line-height: 20px;}
                     }
                 }
                 .swiper-pagination {display: none !important;}

@@ -223,7 +223,7 @@
   }
   .sectorsSection .sector__card, .testimonialSection .sector__card {
     width: 240px;
-    height: 240px;
+    height: 255px;
     margin-top: -35px;
   }
   .sectorsSection .sector__card:nth-child(5), .testimonialSection .sector__card:nth-child(5) {
@@ -285,6 +285,8 @@
             align-items: flex-start;
     display: none;
     overflow-y: scroll;
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
   }
   header nav.topNavigation .closeMenuPopup {
     width: 50px;
@@ -338,13 +340,20 @@
             justify-content: flex-start;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
-  header nav.topNavigation .menu > .menu-item.menu-dropdown::after {
-    content: "\f078";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    top: 7.5px;
-    right: 0;
+  header nav.topNavigation .menu > .menu-item.menu-dropdown > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 1rem;
+  }
+  header nav.topNavigation .menu > .menu-item.menu-dropdown .downArrowIcon {
+    position: relative;
     width: 35px;
     height: 35px;
     display: -webkit-box;
@@ -357,6 +366,13 @@
         -ms-flex-align: center;
             align-items: center;
     color: white;
+    right: -1rem;
+  }
+  header nav.topNavigation .menu > .menu-item.menu-dropdown:hover .sub-menu li {
+    height: 0;
+  }
+  header nav.topNavigation .menu > .menu-item.menu-dropdown.active .sub-menu li {
+    height: 36px;
   }
   header nav.topNavigation .menu > .menu-item .sub-menu {
     width: 100%;
@@ -438,6 +454,14 @@
   }
   header nav.topNavigation .menu > .menu-item > a {
     font-size: 16px;
+  }
+  .homeAboutSecton .homeAboutSubSec .secHeading {
+    text-align: center;
+  }
+  .homeAboutSecton .homeAboutSubSec .secHeading h1 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .homeAboutSecton .homeAboutSubSec .aboutImg {
     margin-top: 3em;
@@ -588,7 +612,7 @@
   .sectorsSection .sector__card, .testimonialSection .sector__card {
     width: 240px;
     min-width: 240px;
-    height: 240px;
+    height: 255px;
     margin-top: 0;
   }
   .sectorsSection .sector__card:nth-child(5), .testimonialSection .sector__card:nth-child(5) {
@@ -608,7 +632,7 @@
     margin-bottom: 1em;
   }
   .testimonialSection .testimonialSliderSub {
-    padding: 0 1em;
+    padding: 0 0;
   }
   .testimonialSection .testimonialSliderSub::before {
     width: calc(100% - 50px);
@@ -624,6 +648,7 @@
   }
   .testimonialSection .testimonialSliderSub .testimonialSwiper {
     height: auto;
+    min-height: 360px;
   }
   .testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard {
     -webkit-box-orient: vertical;
@@ -636,13 +661,16 @@
   }
   .testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__image {
     max-width: 100%;
-    margin-bottom: 8em;
+    margin-bottom: 1.3em;
+  }
+  .testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__image::after {
+    display: none;
   }
   .testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__content {
     max-width: 100%;
   }
   .testimonialSection .testimonialSliderSub .testimonialSwiper .testimonialCard .__content .__text {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
   }
   .testimonialSection .testimonialSliderSub .testimonialSwiper .swiper-pagination {

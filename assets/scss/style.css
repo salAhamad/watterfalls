@@ -1069,7 +1069,7 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
 
 .sectorsSection .sector__card, .testimonialSection .sector__card {
   width: 240px;
-  height: 240px;
+  height: 255px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1080,10 +1080,106 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
       -ms-flex-align: center;
           align-items: center;
   margin-top: -35px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .sectorsSection .sector__card:nth-child(5), .testimonialSection .sector__card:nth-child(5) {
   margin-left: 1px;
+}
+
+.sectorsSection .sector__card.sector__card_2, .testimonialSection .sector__card.sector__card_2 {
+  background-image: url("../images/Polygon.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.sectorsSection .sector__card.oncology, .testimonialSection .sector__card.oncology {
+  background-image: url("../images/polygon_oncology.svg");
+}
+
+.sectorsSection .sector__card.oncology:hover, .testimonialSection .sector__card.oncology:hover {
+  background-image: url("../images/polygon_oncology_full.svg");
+}
+
+.sectorsSection .sector__card.dentistry, .testimonialSection .sector__card.dentistry {
+  background-image: url("../images/polygon_dentistry.svg");
+}
+
+.sectorsSection .sector__card.dentistry:hover, .testimonialSection .sector__card.dentistry:hover {
+  background-image: url("../images/polygon_dentistry_full.svg");
+}
+
+.sectorsSection .sector__card.familyMedicine, .testimonialSection .sector__card.familyMedicine {
+  background-image: url("../images/polygon_familyMedicine.svg");
+}
+
+.sectorsSection .sector__card.familyMedicine:hover, .testimonialSection .sector__card.familyMedicine:hover {
+  background-image: url("../images/polygon_familyMedicine_full.svg");
+}
+
+.sectorsSection .sector__card.dermatology, .testimonialSection .sector__card.dermatology {
+  background-image: url("../images/polygon_dermatology.svg");
+}
+
+.sectorsSection .sector__card.dermatology:hover, .testimonialSection .sector__card.dermatology:hover {
+  background-image: url("../images/polygon_dermatology_full.svg");
+}
+
+.sectorsSection .sector__card.humanitarian, .testimonialSection .sector__card.humanitarian {
+  background-image: url("../images/polygon_humanitarian.svg");
+}
+
+.sectorsSection .sector__card.humanitarian:hover, .testimonialSection .sector__card.humanitarian:hover {
+  background-image: url("../images/polygon_humanitarian_full.svg");
+}
+
+.sectorsSection .sector__card.otology, .testimonialSection .sector__card.otology {
+  background-image: url("../images/polygon_otology.svg");
+}
+
+.sectorsSection .sector__card.otology:hover, .testimonialSection .sector__card.otology:hover {
+  background-image: url("../images/polygon_otology_full.svg");
+}
+
+.sectorsSection .sector__card.diagnostics, .testimonialSection .sector__card.diagnostics {
+  background-image: url("../images/polygon_diagnostics.svg");
+}
+
+.sectorsSection .sector__card.diagnostics:hover, .testimonialSection .sector__card.diagnostics:hover {
+  background-image: url("../images/polygon_diagnostics_full.svg");
+}
+
+.sectorsSection .sector__card.healthcare-emergency, .testimonialSection .sector__card.healthcare-emergency {
+  background-image: url("../images/polygon_healthcare-emergency.svg");
+}
+
+.sectorsSection .sector__card.healthcare-emergency:hover, .testimonialSection .sector__card.healthcare-emergency:hover {
+  background-image: url("../images/polygon_healthcare-emergency_full.svg");
+}
+
+.sectorsSection .sector__card.innovation-education, .testimonialSection .sector__card.innovation-education {
+  background-image: url("../images/polygon_innovation-education.svg");
+}
+
+.sectorsSection .sector__card.innovation-education:hover, .testimonialSection .sector__card.innovation-education:hover {
+  background-image: url("../images/polygon_innovation-education_full.svg");
+}
+
+.sectorsSection .sector__card.pharmaceutical, .testimonialSection .sector__card.pharmaceutical {
+  background-image: url("../images/polygon_pharmaceutical.svg");
+}
+
+.sectorsSection .sector__card.pharmaceutical:hover, .testimonialSection .sector__card.pharmaceutical:hover {
+  background-image: url("../images/polygon_pharmaceutical_full.svg");
+}
+
+.sectorsSection .sector__card.nutrition, .testimonialSection .sector__card.nutrition {
+  background-image: url("../images/polygon_nutrition.svg");
+}
+
+.sectorsSection .sector__card.nutrition:hover, .testimonialSection .sector__card.nutrition:hover {
+  background-image: url("../images/polygon_nutrition_full.svg");
 }
 
 .sectorsSection .sector__card .sectorCard__content, .testimonialSection .sector__card .sectorCard__content {
@@ -1140,6 +1236,7 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 .sectorsSection .sector__card .polygone svg path, .testimonialSection .sector__card .polygone svg path {
@@ -1153,6 +1250,28 @@ header .topNavigation .menu > .menu-item:hover .sub-menu li, header .topNavigati
 
 .sectorsSection .sector__card .polygone svg path.bgStroke, .testimonialSection .sector__card .polygone svg path.bgStroke {
   fill: green;
+}
+
+.sectorsSection .sector__card .sectorCard__icon, .testimonialSection .sector__card .sectorCard__icon {
+  width: 75px;
+  height: 75px;
+}
+
+.sectorsSection .sector__card .sectorCard__icon img, .testimonialSection .sector__card .sectorCard__icon img {
+  max-height: 100%;
+  width: 100%;
+}
+
+.sectorsSection .sector__card .sectorCard__icon img[data-set="hover"], .testimonialSection .sector__card .sectorCard__icon img[data-set="hover"] {
+  display: none;
+}
+
+.sectorsSection .sector__card:hover .sectorCard__icon img[data-set="active"], .testimonialSection .sector__card:hover .sectorCard__icon img[data-set="active"] {
+  display: none;
+}
+
+.sectorsSection .sector__card:hover .sectorCard__icon img[data-set="hover"], .testimonialSection .sector__card:hover .sectorCard__icon img[data-set="hover"] {
+  display: block;
 }
 
 .sectorsSection .sector__card.oncology .polygone svg path.bgStroke, .testimonialSection .sector__card.oncology .polygone svg path.bgStroke {
