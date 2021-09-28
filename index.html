@@ -1468,8 +1468,8 @@
         closePopupMenuBtn.addEventListener("click", () => popupMenu.style.display = "none");
 
         // toggling menus
-        const menuArrowButtong = document.querySelectorAll('.downArrowIcon');
-        menuArrowButtong.forEach(item => {
+        const menuArrowButtons = document.querySelectorAll('.downArrowIcon');
+        menuArrowButtons.forEach(item => {
             item.addEventListener("click", function() {
                 this.classList.toggle("active");
                 this.closest(".menu-dropdown").classList.toggle("active");
